@@ -354,7 +354,7 @@ canvas#chart {
         grid-template-columns: 7rem auto 23rem;
     }
     aside {
-        width: 6rem;
+        width: 6.5rem;
         height: 100%;
     }
     aside .sidebar h3 {
@@ -364,11 +364,11 @@ canvas#chart {
         width: 5.6rem;
     }
     aside .sidebar a.active::after {
-        right: 17px;
+        right: 10px;
     }
     aside .sidebar a:last-child {
         position: relative;
-        margin-top: 1.8rem;
+        /* margin-top: 1.8rem; */
     }
     main {
         margin-bottom: 1rem;
