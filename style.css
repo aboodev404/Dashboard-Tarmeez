@@ -341,13 +341,13 @@ canvas#chart {
 }
 
 /*------- Media Queries -------*/
-@media screen and (min-width: 12985px) {
+/* @media screen and (min-width: 12985px) {
     main .insights {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         row-gap: 0;
     }
-}
+} */
 @media screen and (max-width: 1200px) {
     .container {
         width: 94%;
