@@ -5,6 +5,7 @@
     --section-padding: 60px;
     --section-background: #eaf0f9;
     --color-white: #fff;
+    --icon-main-color: #111629;
 
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
@@ -18,11 +19,17 @@
 }
 /*------- Dark Mode Variables -------*/
 .dark-theme-varibles {
-    --main-color: #181a1e;
+    /* --main-color: #181a1e;
     --secondary-color: #818cab;
     --font-color: #e1e1ff;
     --section-background: #161625;
-    --heading-color: #818cab;
+    --heading-color: #818cab; */
+    --main-color: #F76F01;
+	--secondary-color: #F5F5F5;
+    --section-padding: 60px;
+    --section-background: #282c35;
+    --color-white: #1A1C22;
+    --icon-main-color: #F76F01;
 }
 /*------- Global Rules -------*/
 * {
@@ -71,7 +78,7 @@ h5 {
 small {
     font-size: 0.75rem;
 }
-p {
+h2,p {
     color: var(--secondary-color);
 }
 .primary {
@@ -89,6 +96,32 @@ p {
 }
 .sidebar-icon {
     width: 24px;
+}
+/* Dark Mode */
+#toggle {
+    position: relative;
+    display: block;
+    width: 43px;
+    height: 20px;
+    background: var(--section-background);
+    border-radius: 100px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#toggle .indicator {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 2.2px;
+    left: 2px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+#toggle.active .indicator {
+    left: 1.5rem;
 }
 aside {
     height: 100vh;
@@ -158,6 +191,11 @@ aside .sidebar a:hover i,
 aside .sidebar a:hover img {
     margin-left: 1rem;
 }
+aside .sidebar a:last-child:hover span,
+aside .sidebar a:last-child:hover i,
+aside .sidebar a:last-child:hover img {
+    margin-left: 0;
+}
 /*------- Main -------*/
 main {
     margin-top: 1.4rem;
@@ -187,7 +225,7 @@ main .insights > div span {
     background-color: var(--section-background);
     padding: 0.5rem;
     border-radius: 8px;
-    color: var(--secondary-color);
+    color: var(--icon-main-color);
     font-size: 2.5rem;
 }
 main .insights .details {
@@ -196,6 +234,7 @@ main .insights .details {
     justify-content: space-evenly;
 }
 main .insights .details h3 {
+    color: var(--secondary-color);
     font-size: 15px;
     font-weight: 500;
 }
@@ -242,33 +281,13 @@ canvas#chart {
     gap: 1rem;
     align-items: center;
 }
+.right .top span {
+    color: var(--secondary-color);
+}
 .right .top button {
     display: none;
 }
 .right .top .profile-photo {
-    border-radius: var(--border-radius-1);
-}
-.right .theme-toggler {
-    background-color: var(--color-white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 1.6rem;
-    width: 4.2rem;
-    cursor: pointer;
-    border-radius: var(--border-radius-1);
-}
-.right .theme-toggler span {
-    font-size: 1.2rem;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.right .theme-toggler span.active {
-    background-color: var(--main-color);
-    color: var(--color-white);
     border-radius: var(--border-radius-1);
 }
 .right .top .notifications,
@@ -453,10 +472,6 @@ canvas#chart {
         margin: 0;
         z-index: 2;
         box-shadow: var(--box-shadow);
-    }
-    .right .top .theme-toggler {
-        /* width: 4.4rem; */
-        background: var(--section-background)
     }
     .right .top button {
         display: inline-block;

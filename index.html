@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap"
         rel="stylesheet">
     <!-- CSS Code -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -44,36 +44,24 @@
                     <h3>Charts</h3>
                 </a>
                 <a href="#">
-                    <span class="material-symbols-outlined">widgets</span>
-                    <h3>Widgets</h3>
-                </a>
-                <a href="#">
                     <span class="material-symbols-outlined">table</span>
                     <h3>Tables</h3>
                 </a>
                 <a href="#">
-                    <span class="material-symbols-outlined">open_in_full</span>
-                    <h3>Full Width</h3>
+                    <!-- <img src="images/auth.png" class="sidebar-icon"> -->
+                    <span class="material-symbols-outlined">app_registration</span>
+                    <h3>Register</h3>
                 </a>
                 <a href="#">
-                    <img src="images/form.png" class="sidebar-icon">
-                    <h3>Form</h3>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-toggle-on"></i>
-                    <h3>Buttons</h3>
-                </a>
-                <a href="#">
-                    <img src="images/icons.png" class="sidebar-icon">
-                    <h3>Icons</h3>
-                </a>
-                <a href="#">
-                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="material-symbols-outlined">settings</span>
                     <h3>Elements</h3>
                 </a>
-                <a href="#">
-                    <img src="images/auth.png" class="sidebar-icon">
-                    <h3>Authentication</h3>
+                <a href="#" class="dark-mode">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                    <h3>light_mode</h3>
+                    <div id="toggle">
+                        <i class="indicator"></i>
+                    </div>
                 </a>
             </div>
         </aside>
@@ -152,10 +140,6 @@
                 <button id="menu-btn">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
-                <div class="theme-toggler">
-                    <span class="material-symbols-outlined active">light_mode</span>
-                    <span class="material-symbols-outlined">dark_mode</span>
-                </div>
                 <div class="messages-notify">
                     <span class="material-symbols-outlined">mail</span>
                 </div>
@@ -220,7 +204,7 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

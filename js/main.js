@@ -37,9 +37,8 @@ closeBtn.addEventListener('click', () => {
 })
 
 // change theme
-themeToggle.addEventListener('click', () => {
+const toggle = document.getElementById("toggle");
+toggle.onclick = function() {
     document.body.classList.toggle('dark-theme-varibles');
-
-    themeToggle.querySelector('span:nth-child(1)').classList.toggle('active');
-    themeToggle.querySelector('span:nth-child(2)').classList.toggle('active');
-})
+    toggle.classList.toggle('active');
+}
