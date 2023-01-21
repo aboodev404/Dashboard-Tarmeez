@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarmeez Tech | Dashboard</title>
+    <!-- Material icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
+    <!-- CSS Code -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- aside -->
+        <aside>
+            <!-- head sidebar -->
+            <div class="head">
+                <div class="logo">
+                    <img src="images/Final logo.png" alt="Tarmeez Logo">
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-outlined">close</span>
+                </div>
+            </div>
+            <!-- sidebar -->
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <h3>Charts</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-outlined">widgets</span>
+                    <h3>Widgets</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-outlined">table</span>
+                    <h3>Tables</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-outlined">open_in_full</span>
+                    <h3>Full Width</h3>
+                </a>
+                <a href="#">
+                    <img src="images/form.png" class="sidebar-icon">
+                    <h3>Form</h3>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-toggle-on"></i>
+                    <h3>Buttons</h3>
+                </a>
+                <a href="#">
+                    <img src="images/icons.png" class="sidebar-icon">
+                    <h3>Icons</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <h3>Elements</h3>
+                </a>
+                <a href="#">
+                    <img src="images/auth.png" class="sidebar-icon">
+                    <h3>Authentication</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- main -->
+        <main>
+            <h2>Hello, Mohammed Ali</h2>
+            <div class="date">
+                <span id="lblTime"></span>
+                <span id="date" class="date"></span>
+                <script>
+                    window.onload = function () {
+                        DisplayCurrentTime();
+                    };
+                    function DisplayCurrentTime() {
+                        var date = new Date();
+                        var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+                        var am_pm = date.getHours() >= 12 ? "PM" : "AM";
+                        hours = hours < 10 ? "0" + hours : hours;
+                        var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+                        var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+                        time = hours + ":" + minutes + ":" + " " + am_pm;
+                        var lblTime = document.getElementById("lblTime");
+                        lblTime.innerHTML = time;
+                    };
+
+                    let date = new Date().toUTCString().slice(5, 16);
+                    document.getElementById("date").innerHTML = date;
+                </script>
+            </div>
+
+            <div class="insights">
+                <div class="details">
+                    <span class="material-symbols-outlined">group</span>
+                    <div class="info">
+                        <h3>Total Users</h3>
+                        <h2>256K</h2>
+                    </div>
+                </div>
+                <div class="details">
+                    <span class="material-symbols-outlined">person_add</span>
+                    <div class="info">
+                        <h3>New Users</h3>
+                        <h2>256K</h2>
+                    </div>
+                </div>
+                <div class="details">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <div class="info">
+                        <h3>Total Order</h3>
+                        <h2>203</h2>
+                    </div>
+                </div>
+                <div class="details">
+                    <span class="material-symbols-outlined">person</span>
+                    <div class="info">
+                        <h3>Users</h3>
+                        <h2>256K</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="overview">
+                <div class="head">
+                    <h2>Overview</h2>
+                    <select>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="yearly">Yearly</option>
+                    </select>
+                </div>
+                <canvas id="chart"></canvas>
+            </div>
+        </main>
+        <!-- right -->
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-outlined active">light_mode</span>
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </div>
+                <div class="messages-notify">
+                    <span class="material-symbols-outlined">mail</span>
+                </div>
+                <div class="notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                </div>
+                <img src="images/user.jpg" class="profile-photo" alt="profile-photo">
+            </div>
+            <!-- Message -->
+            <div class="recent-message">
+                <div class="messages">
+                    <div class="head">
+                        <h2>Message</h2>
+                        <p><a href="#">See All</a></p>
+                    </div>
+                    <div class="message">
+                        <img src="images/user.jpg" class="profile-photo" alt="profile-photo">
+                        <div class="text">
+                            <p><b>Rahma Ebrahim</b></p>
+                            <small class="text-muted">Hello, There</small>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <img src="images/user.jpg" class="profile-photo" alt="profile-photo">
+                        <div class="text">
+                            <p><b>Rahma Ebrahim</b></p>
+                            <small class="text-muted">Hello, There</small>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <img src="images/user.jpg" class="profile-photo" alt="profile-photo">
+                        <div class="text">
+                            <p><b>Rahma Ebrahim</b></p>
+                            <small class="text-muted">Hello, There</small>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <img src="images/user.jpg" class="profile-photo" alt="profile-photo">
+                        <div class="text">
+                            <p><b>Rahma Ebrahim</b></p>
+                            <small class="text-muted">Hello, There</small>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <img src="images/user.jpg" class="profile-photo" alt="profile-photo">
+                        <div class="text">
+                            <p><b>Rahma Ebrahim</b></p>
+                            <small class="text-muted">Hello, There</small>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <img src="images/user.jpg" class="profile-photo" alt="profile-photo">
+                        <div class="text">
+                            <p><b>Rahma Ebrahim</b></p>
+                            <small class="text-muted">Hello, There</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
